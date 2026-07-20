@@ -146,5 +146,32 @@ exports.updateProduct=async(req,res)=>{
     res.redirect("/products");
 
 };
+exports.myProducts = async (req, res) => {
+
+    try {
+
+        const products = await Product.find({
+
+            UserEmail: req.session.email
+
+        });
+
+        res.render("myproducts", {
+
+            products
+
+        });
+
+    }
+
+    catch(err){
+
+        console.log(err);
+
+        res.send("Unable to load products");
+
+    }
+
+};
 
 
