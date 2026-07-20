@@ -32,7 +32,8 @@ exports.addProduct=async(req,res)=>{
 
             UserName:user.UserName,
 
-            College:user.College
+            College:user.College,
+            Category:req.body.category
 
         });
 
