@@ -71,6 +71,29 @@ exports.displayProducts=async(req,res)=>{
         return res.redirect("/");
 
     }
+    const sort = req.query.sort;
+
+let products;
+
+if(sort === "lowtohigh"){
+
+    products = await Product.find({ College: user.College })
+                            .sort({ Cost: 1 });
+
+}
+else if(sort === "hightolow"){
+
+    products = await Product.find({ College: user.College })
+                            .sort({ Cost: -1 });
+
+}
+else{
+
+    products = await Product.find({ College: user.College });
+
+}
+
+res.render("displayproducts", { products });
 
     res.render("displayproducts",{
 
