@@ -1,9 +1,10 @@
 const User = require("../models/User");
 const Otp = require("../models/Otp");
+const connectDB = require("../connectDB");
 const transporter = require("../config/mail");
 exports.sendOtp = async (req, res) => {
     try {
-
+         await connectDB();
         const email = req.body.email;
 
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
