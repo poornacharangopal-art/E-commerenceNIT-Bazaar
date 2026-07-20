@@ -148,3 +148,24 @@ exports.logout = (req, res) => {
     });
 
 };
+exports.profile = async (req, res) => {
+
+    const user = await User.findOne({
+
+        EmailId: req.session.email
+
+    });
+
+    if (!user) {
+
+        return res.redirect("/");
+
+    }
+
+    res.render("profile", {
+
+        user
+
+    });
+
+};
