@@ -1,131 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+*{
 
-<head>
+margin:0;
 
-<meta charset="UTF-8">
+padding:0;
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+box-sizing:border-box;
 
-<title>Dashboard</title>
+font-family:'Poppins',sans-serif;
 
-<link rel="stylesheet"
-href="/css/dashboard.css">
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-rel="stylesheet">
+body{
 
-</head>
+background:#eef2f7;
 
-<body>
+}
 
-<nav>
+nav{
 
-<h2>NIT Bazaar</h2>
+display:flex;
 
-<ul>
+justify-content:space-between;
 
-<li><a href="/dashboard">Home</a></li>
+align-items:center;
 
-<li><a href="/products">Products</a></li>
+padding:20px 80px;
 
-<li><a href="/profile">Profile</a></li>
+background:linear-gradient(135deg,#1E3C72,#2A5298);
 
-<li><a href="/logout">Logout</a></li>
+}
 
-</ul>
+nav h2{
 
-</nav>
+color:white;
 
-<section class="hero">
+}
 
-<h1>
+nav ul{
 
-Welcome,
+display:flex;
 
-<%= name %> 👋
+list-style:none;
 
-</h1>
+}
 
-<p>
+nav li{
 
-Buy and Sell products within your college campus.
+margin-left:30px;
 
-</p>
+}
 
-</section>
+nav a{
 
-<section class="cards">
+text-decoration:none;
 
-<a href="/addproduct" class="card">
+color:white;
 
-<h2>➕</h2>
+font-size:17px;
 
-<h3>Add Product</h3>
+}
 
-<p>
+nav a:hover{
 
-Sell books, gadgets and more.
+color:gold;
 
-</p>
+}
 
-</a>
+.hero{
 
-<a href="/products" class="card">
+height:250px;
 
-<h2>📦</h2>
+background:
 
-<h3>View Products</h3>
+linear-gradient(rgba(30,60,114,.75),
 
-<p>
+rgba(42,82,152,.75)),
 
-Browse available products.
+url("/images/homebg.jpg");
 
-</p>
+background-size:cover;
 
-</a>
+background-position:center;
 
-<a href="/profile" class="card">
+display:flex;
 
-<h2>👤</h2>
+flex-direction:column;
 
-<h3>My Profile</h3>
+justify-content:center;
 
-<p>
+align-items:center;
 
-View your account details.
+color:white;
 
-</p>
+text-align:center;
 
-</a>
+}
 
-<a href="/logout" class="card">
+.hero h1{
 
-<h2>🚪</h2>
+font-size:45px;
 
-<h3>Logout</h3>
+margin-bottom:15px;
 
-<p>
+}
 
-Sign out safely.
+.hero p{
 
-</p>
+font-size:20px;
 
-</a>
+}
 
-</section>
+.cards{
 
-<footer>
+width:90%;
 
-<p>
+margin:50px auto;
 
-© 2026 NIT Bazaar
+display:grid;
 
-</p>
+grid-template-columns:repeat(2,1fr);
 
-</footer>
+gap:30px;
 
-</body>
+}
 
-</html>
+.card{
+
+background:white;
+
+padding:40px;
+
+text-decoration:none;
+
+color:black;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.card h2{
+
+font-size:45px;
+
+margin-bottom:15px;
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+color:#1E3C72;
+
+}
+
+footer{
+
+margin-top:50px;
+
+padding:20px;
+
+text-align:center;
+
+background:#1E3C72;
+
+color:white;
+
+}
