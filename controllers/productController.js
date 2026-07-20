@@ -173,5 +173,76 @@ exports.myProducts = async (req, res) => {
     }
 
 };
+exports.editProductPage = async (req, res) => {
 
+    try {
+
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+
+            return res.send("Product not found");
+
+        }
+
+        if (product.UserEmail !== req.session.email) {
+
+            return res.send("Unauthorized");
+
+        }
+
+        res.render("editproduct", {
+            product
+        });
+
+    }
+
+    catch (err) {
+
+        console.log(err);
+
+        res.send("Error");
+
+    }
+
+};
+exports.updateProduct = async (req, res) => {
+
+    try {
+
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+
+            return res.send("Product not found");
+
+        }
+
+        if (product.UserEmail !== req.session.email) {
+
+            return res.send("Unauthorized");
+
+        }
+
+        product.Name = req.body.productName;
+        product.ImageUrl = req.body.image;
+        product.Cost = req.body.cost;
+        product.Category = req.body.category;
+        product.Description = req.body.description;
+
+        await product.save();
+
+        res.redirect("/myproducts");
+
+    }
+
+    catch (err) {
+
+        console.log(err);
+
+        res.send("Unable to update");
+
+    }
+
+};
 
