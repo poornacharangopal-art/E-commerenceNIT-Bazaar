@@ -35,7 +35,14 @@ const productSchema=new mongoose.Schema({
     College:{
         type:String,
         required:true
-    }
+    },
+    Category:{
+
+    type:String,
+
+    required:true
+
+},
 
 },{timestamps:true});
 
