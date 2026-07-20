@@ -28,7 +28,7 @@ router.get("/otp", (req, res) => {
 
 router.get("/loginpage", (req, res) => {
 
-    res.render("login1", {
+    res.render("login", {
 
         email: req.query.email
 
