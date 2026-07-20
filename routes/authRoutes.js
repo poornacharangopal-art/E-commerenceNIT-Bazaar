@@ -8,9 +8,9 @@ router.post("/sendotp", auth.sendOtp);
 
 router.post("/verify", auth.verifyOtp);
 
-router.post("/login", auth.signup);
+router.post("/login", auth.signin);
 
-router.post("/signin", auth.signin);
+router.post("/signup", auth.signup);
 
 router.get("/logout", auth.logout);
 
