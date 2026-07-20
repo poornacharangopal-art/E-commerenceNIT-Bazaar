@@ -35,6 +35,6 @@ router.get("/loginpage", (req, res) => {
     });
 
 });
-router.get("/profile", auth, authController.profile);
+router.get("/profile", auth.profile);
 
 module.exports = router;
