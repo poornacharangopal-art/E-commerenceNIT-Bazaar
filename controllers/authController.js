@@ -7,6 +7,9 @@ exports.sendOtp = async (req, res) => {
         const email = req.body.email;
 
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
+        const mongoose = require("mongoose");
+
+console.log("Request Ready State:", mongoose.connection.readyState);
 
         await Otp.deleteMany({ email });
 
