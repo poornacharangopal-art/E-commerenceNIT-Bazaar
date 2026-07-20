@@ -21,5 +21,5 @@ router.get("/product/:id",auth,product.productDetails);
 router.post("/delete/:id",auth,product.deleteProduct);
 
 router.post("/update/:id",auth,product.updateProduct);
-
+router.get("/myproducts", auth, product.myProducts);
 module.exports=router;
