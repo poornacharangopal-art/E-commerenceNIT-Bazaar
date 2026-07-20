@@ -10,8 +10,13 @@ const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 
 const app = express();
-
-connectDB();
+connectDB()
+.then(() => {
+    console.log("Database ready");
+})
+.catch(err => {
+    console.log("Database connection failed:", err);
+});
 
 app.set("view engine", "ejs");
 
